@@ -6,6 +6,8 @@ provider:
   name: aws
   runtime: nodejs12.x
   lambdaHashingVersion: 20201221
+  environment :
+    MUSIC_TABLE: music-uploads
   iamRoleStatements:
     - Effect: "Allow"
       Action:
@@ -129,7 +131,7 @@ resources:
    MusicTable:
      Type: AWS::DynamoDB::Table
      Properties:
-        TableName: ${self:service}-${self:provider.stage}-music-uploads
+        TableName: ${self:service}-${self:provider.stage}-${self:provider.environment.MUSIC_TABLE}
         AttributeDefinitions: 
             - AttributeName : ID
               AttributeType : S

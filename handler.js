@@ -27,7 +27,7 @@ module.exports.createMusic = (event, context, callback) => {
   const parseData = JSON.parse(event.body);
 
   const params = {
-    TableName : 'music-api-dev-music-uploads',
+    TableName : process.env.MUSIC_TABLE,
     Item : {
       ID : uuid.v1(),
       name : parseData.name,
