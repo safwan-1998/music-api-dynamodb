@@ -1,6 +1,12 @@
 {
   "dependencies": {
     "aws-sdk": "^2.831.0",
+    "serverless-pseudo-parameters": "^2.5.0",
     "uuid": "^3.3.2"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-plugin-import": "^2.22.1"
   }
 }
